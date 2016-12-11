@@ -1,0 +1,9 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="KEY_PREF_STORE_HISTORY"
+        android:summary="@string/pref_description_store_history_on_device"
+        android:title="@string/pref_title_store_history_on_device" />
+
+</PreferenceScreen>

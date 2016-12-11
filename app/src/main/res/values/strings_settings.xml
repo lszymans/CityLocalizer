@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_store_history_on_device">Store search history on your device</string>
+    <string name="pref_description_store_history_on_device">Database will be cleared if you turn off this option</string>
+
+</resources>

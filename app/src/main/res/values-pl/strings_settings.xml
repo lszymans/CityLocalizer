@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="pref_header_general">Ogólne</string>
+
+    <string name="pref_title_store_history_on_device">Przechowuj historię wyszukiwania</string>
+    <string name="pref_description_store_history_on_device">Baza danych na urządzeniu zostanie wyczyszczona, gdy wyłączysz tę opcję</string>
+
+</resources>
