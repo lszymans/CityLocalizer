@@ -17,7 +17,6 @@ import pl.lukaszszymansk.citylocalizer.adapters.SearchHistoryListAdapter;
 import pl.lukaszszymansk.citylocalizer.services.UtilsService;
 import pl.lukaszszymansk.citylocalizer.tasks.DownloadCityInfoTask;
 
-
 public class SearchHistoryFragment extends Fragment {
 
     private SearchHistoryListAdapter historyListAdapter;
@@ -51,9 +50,9 @@ public class SearchHistoryFragment extends Fragment {
 
         historyListAdapter = new SearchHistoryListAdapter(getActivity(), handler);
 
-        ListView lvCities = (ListView) getActivity().findViewById(R.id.lvCities);
-        lvCities.setAdapter(historyListAdapter);
-        lvCities.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ListView lvHistory = (ListView) getActivity().findViewById(R.id.lvHistory);
+        lvHistory.setAdapter(historyListAdapter);
+        lvHistory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 UtilsService.closeKeyboard(getActivity());
@@ -65,15 +64,15 @@ public class SearchHistoryFragment extends Fragment {
     }
 
     private void updateView() {
-        TextView tvEmptyList = (TextView) getActivity().findViewById(R.id.tvEmptyList);
-        ListView lvCities = (ListView) getActivity().findViewById(R.id.lvCities);
+        TextView tvEmptyHistoryList = (TextView) getActivity().findViewById(R.id.tvEmptyHistoryList);
+        ListView lvHistory = (ListView) getActivity().findViewById(R.id.lvHistory);
 
         if(historyListAdapter != null && historyListAdapter.getCount() > 0) {
-            lvCities.setVisibility(View.VISIBLE);
-            tvEmptyList.setVisibility(View.GONE);
+            lvHistory.setVisibility(View.VISIBLE);
+            tvEmptyHistoryList.setVisibility(View.GONE);
         } else {
-            lvCities.setVisibility(View.GONE);
-            tvEmptyList.setVisibility(View.VISIBLE);
+            lvHistory.setVisibility(View.GONE);
+            tvEmptyHistoryList.setVisibility(View.VISIBLE);
         }
     }
 }

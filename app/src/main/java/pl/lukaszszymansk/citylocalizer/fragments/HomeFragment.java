@@ -32,7 +32,6 @@ import pl.lukaszszymansk.citylocalizer.helpers.SharedPreferencesHelper;
 import pl.lukaszszymansk.citylocalizer.services.UtilsService;
 import pl.lukaszszymansk.citylocalizer.tasks.DownloadCityInfoTask;
 
-
 public class HomeFragment extends Fragment {
 
     private static final String EXTRA_CITY_LIST_ADAPTER = "EXTRA_CITY_LIST_ADAPTER";
@@ -74,7 +73,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        updateListView();
+        updateView();
 
         FloatingActionButton fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -93,12 +92,12 @@ public class HomeFragment extends Fragment {
                                 if (newItem != null && !newItem.isEmpty()) {
                                     citiesListAdapter.add(city);
                                 }
-                                updateListView();
+                                updateView();
                             }
                         })
                         .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                updateListView();
+                                updateView();
                             }
                         });
                 AlertDialog dialog = dialogBuilder.create();
@@ -114,16 +113,16 @@ public class HomeFragment extends Fragment {
         super.onSaveInstanceState(savedInstanceState);
     }
 
-    private void updateListView() {
-        TextView tvEmptyList = (TextView) getActivity().findViewById(R.id.tvEmptyList);
+    private void updateView() {
+        TextView tvEmptyCitiesList = (TextView) getActivity().findViewById(R.id.tvEmptyCitiesList);
         ListView lvCities = (ListView) getActivity().findViewById(R.id.lvCities);
 
         if(citiesListAdapter.getCount() > 0) {
             lvCities.setVisibility(View.VISIBLE);
-            tvEmptyList.setVisibility(View.GONE);
+            tvEmptyCitiesList.setVisibility(View.GONE);
         } else {
             lvCities.setVisibility(View.GONE);
-            tvEmptyList.setVisibility(View.VISIBLE);
+            tvEmptyCitiesList.setVisibility(View.VISIBLE);
         }
     }
 
