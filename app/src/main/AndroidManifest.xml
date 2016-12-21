@@ -17,6 +17,7 @@
             android:name=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden|stateUnchanged"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,31 +29,34 @@
         <activity
             android:name=".activities.AboutActivity"
             android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/about"/>
 
         <activity
             android:name=".activities.InfoMessageActivity"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
 
         <activity
             android:name=".activities.SettingsActivity"
-            android:label="@string/title_activity_settings"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_settings"/>
 
         <activity
             android:name=".activities.WebPageActivity"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
 
         <activity
             android:name=".activities.CityInfoActivity"
-            android:label="@string/information" >
-        </activity>
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/information" />
 
         <activity
             android:name=".activities.MapActivity"
-            android:label="@string/localization" >
-        </activity>
-
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/localization" />
 
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

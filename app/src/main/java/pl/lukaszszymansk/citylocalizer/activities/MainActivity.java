@@ -46,13 +46,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         int menuSize = navigationView.getMenu().size();
         for (int i = 0; i < menuSize; i++) {
