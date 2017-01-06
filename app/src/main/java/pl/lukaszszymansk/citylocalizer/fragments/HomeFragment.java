@@ -80,14 +80,15 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                final EditText edittext = new EditText(getActivity());
+                final EditText editText = new EditText(getActivity());
+                editText.setId(android.R.id.text1);
                 AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity())
                         .setTitle(getString(R.string.enter_city))
-                        .setView(edittext)
+                        .setView(editText)
                         .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                String newItem = edittext.getText().toString().trim();
-                                City city = new City(edittext.getText().toString().trim());
+                                String newItem = editText.getText().toString().trim();
+                                City city = new City(editText.getText().toString().trim());
                                 updateSearchHistory(city);
                                 if (newItem != null && !newItem.isEmpty()) {
                                     citiesListAdapter.add(city);

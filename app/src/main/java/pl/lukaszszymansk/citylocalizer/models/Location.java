@@ -12,6 +12,11 @@ public class Location implements Serializable {
     @SerializedName("lng")
     private double lng;
 
+    public Location(double lat, double lng) {
+        this.lat = lat;
+        this.lng = lng;
+    }
+
     public void setLat(double lat) {
         this.lat = lat;
     }
@@ -26,5 +31,14 @@ public class Location implements Serializable {
 
     public double getLng() {
         return lng;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Location) {
+            Location location = (Location) obj;
+            return lat == location.getLat() && lng == location.getLng();
+        }
+        return false;
     }
 }
